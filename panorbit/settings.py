@@ -25,7 +25,7 @@ SECRET_KEY = '3xb%+*2uex+%1&$@=*+(@^atnm!#tz-n&i5qn$o46jnp&u*2l^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["c9ae666b.ngrok.io", "localhost"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -87,8 +87,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'world',
-        'USER': 'root',
-        'PASSWORD': 'xxxx',
+        'USER': 'devops',
+        'PASSWORD': 'Devops@123',
         'HOST': 'localhost',
         'PORT': '3306',
     }   
