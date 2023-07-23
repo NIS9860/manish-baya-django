@@ -49,18 +49,19 @@ class Country(models.Model):
 
 
 class Countrylanguage(models.Model):
-    countrycode = models.ForeignKey(Country, models.DO_NOTHING, db_column='CountryCode', primary_key=True)  # Field name made lowercase.
-    language = models.CharField(db_column='Language', max_length=30)  # Field name made lowercase.
-    isofficial = models.CharField(db_column='IsOfficial', max_length=1)  # Field name made lowercase.
-    percentage = models.FloatField(db_column='Percentage')  # Field name made lowercase.
+    countrycode = models.ForeignKey(Country, models.DO_NOTHING, db_column='CountryCode', primary_key=True)
+    language = models.CharField(db_column='Language', max_length=30)
+    isofficial = models.CharField(db_column='IsOfficial', max_length=1)
+    percentage = models.FloatField(db_column='Percentage')
 
     class Meta:
         managed = False
         db_table = 'countrylanguage'
         unique_together = (('countrycode', 'language'),)
 
-    def __unicode__(self):
-	return ("country-code: %s language: %s") %(self.countrycode.name, self.language)
+    def __str__(self):
+        return "country-code: %s language: %s" % (self.countrycode.name, self.language)
+
 
 class DjangoMigrations(models.Model):
     app = models.CharField(max_length=255)
